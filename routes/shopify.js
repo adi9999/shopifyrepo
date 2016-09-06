@@ -49,7 +49,10 @@ function getShopToken(shop,callback){
 shopifyRouter.get('/', function(req, res, next) {
     //var Shopify = new shopifyAPI(shopifyRouter.config);
     //var auth_url = Shopify.buildAuthURL();
-    console.log(req.query.shop);
+    var query_params = req.query;
+    if(query_params["shop"]){
+        console.log(query_params["shop"]);
+    }
     res.send("Good");
 // Assuming you are using the express framework
 // you can redirect the user automatically like so
