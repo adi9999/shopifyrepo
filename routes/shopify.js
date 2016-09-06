@@ -50,7 +50,7 @@ shopifyRouter.get('/', function(req, res, next) {
     //var Shopify = new shopifyAPI(shopifyRouter.config);
     //var auth_url = Shopify.buildAuthURL();
     
-    if(req.query.shop){
+    if(req.query.shop != undefined){
         shopifyRouter.shop = shop;
         console.log(shopifyRouter.shop);
     }
