@@ -49,10 +49,10 @@ function getShopToken(shop,callback){
 shopifyRouter.get('/', function(req, res, next) {
     //var Shopify = new shopifyAPI(shopifyRouter.config);
     //var auth_url = Shopify.buildAuthURL();
-    var query_params = req.query;
-    if(query_params["shop"]){
-        console.log("a :" + query_params["shop"]);
-        console.log("b :" + req.query.shop);
+    
+    if(req.query.shop){
+        shopifyRouter.shop = shop;
+        console.log(shopifyRouter.shop);
     }
     res.send("Goodd");
 // Assuming you are using the express framework
