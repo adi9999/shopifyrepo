@@ -253,7 +253,13 @@ shopifyRouter.post('/createProduct',function(req,res,next){
     var postData = {
         product: {
             title: req.body.title,
-            price: "10.00"
+            "variants": [
+              {
+                "option1": "",
+                "price": "10.00",
+                "sku": 123
+              }
+             ]
         }
     };
     getShopToken(shopifyRouter.shop,function(err,status,token){
