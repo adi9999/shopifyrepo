@@ -74,6 +74,7 @@ shopifyRouter.post('/deleteRecurringCharge',function(req, res, next){
 function createRecurringCharge(callback){
     getShopToken(shopifyRouter.shop,function(err,status,token){
         if(err){ callback(false,"error while creating recurring charge"); }else{
+            console.log("status :" status + token);
             if(status == "found"){
                 console.log("found token in Charge");
                 /////// Check if Charge for this app is created or not
