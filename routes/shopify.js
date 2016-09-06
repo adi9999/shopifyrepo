@@ -51,7 +51,7 @@ shopifyRouter.get('/', function(req, res, next) {
     //var auth_url = Shopify.buildAuthURL();
     
     if(req.query.shop != undefined){
-        shopifyRouter.shop = shop;
+        //shopifyRouter.shop = shop;
         console.log(req.query.shop);
     }
     res.send("Goodd");
