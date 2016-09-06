@@ -52,6 +52,7 @@ shopifyRouter.get('/', function(req, res, next) {
     
     if(req.query.shop != undefined){
         //shopifyRouter.shop = shop;
+        console.log(this.shopifyRouter.shop);
         console.log(req.query.shop);
     }
     res.send("Goodd");
