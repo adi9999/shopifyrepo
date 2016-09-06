@@ -6,7 +6,7 @@ var dbCollectionShopDetail = require('../models/dbShopDetail.js');
 var dbShopRecurringChargeDetail = require('../models/dbRecurringChargeDetail.js');
 
 
-shopifyRouter.shop = "sofizarstore.myshopify.com";
+shopifyRouter.shop = "constellationck.myshopify.com";
 shopifyRouter.shopifyAppKey = "ff0c02ef99d9efe2f480e2e375a9b0c3";
 shopifyRouter.shopifySecretKey = "544c5073917ec58c840ab62f69e377fd";
 shopifyRouter.shopifyScope = "write_products,read_orders,write_orders,read_products";
@@ -47,18 +47,12 @@ function getShopToken(shop,callback){
 
 /* Auth Process. */
 shopifyRouter.get('/', function(req, res, next) {
-    //var Shopify = new shopifyAPI(shopifyRouter.config);
-    //var auth_url = Shopify.buildAuthURL();
-    
-    if(req.query.shop != undefined){
-        //shopifyRouter.shop = shop;
-        console.log(global.shopifyRouter.shop);
-        console.log(req.query.shop);
-    }
-    res.send("Goodd");
+    var Shopify = new shopifyAPI(shopifyRouter.config);
+    var auth_url = Shopify.buildAuthURL();
+
 // Assuming you are using the express framework
 // you can redirect the user automatically like so
-    //res.redirect(auth_url);
+    res.redirect(auth_url);
 
 });
 
