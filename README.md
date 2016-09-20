@@ -1,3 +1,3 @@
 # ShopifyTestApp
 
-Heroku application
+Heroku application Shopify
