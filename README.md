@@ -1,5 +1,5 @@
 # ShopifyTestApp
 
 Heroku application Shopify
-edit local
+edit local again
 
