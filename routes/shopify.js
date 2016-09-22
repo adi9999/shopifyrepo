@@ -86,7 +86,9 @@ function createRecurringCharge(callback){
                         {
                              ////Already Have Charge for this Store
                              //res.redirect('https://'+shopifyRouter.shop+'/admin/apps');
+                             
                              callback(true,'https://'+shopifyRouter.shop+'/admin/apps');
+                             
                         }   
                         else
                         {
@@ -214,7 +216,8 @@ shopifyRouter.get('/activateRecurringCharge',function(req, res, next){
                                 dbShopRecurringChargeDetail.update({"recurring_application_charge.id": parseInt(chargeId) },{"recurring_application_charge.status":result["recurring_application_charge"].status,"recurring_application_charge.trial_ends_on":result["recurring_application_charge"].trial_ends_on,"recurring_application_charge.activated_on":result["recurring_application_charge"].activated_on,"recurring_application_charge.updated_at":result["recurring_application_charge"].updated_at },function(err,doc){
                                     if(err){ res.send("Error While Updateing Status: "+err);}else{
                                         console.log("Activation Status Saved in Db");
-                                        res.redirect('https://'+shopifyRouter.shop+'/admin/apps');
+                                        //res.redirect('https://'+shopifyRouter.shop+'/admin/apps');
+                                        res.render('index', { title: 'Express' });
                                     }
                                 });
                             });
@@ -372,7 +375,9 @@ shopifyRouter.get('/finish_auth',function (req,res,next) {
                         if(err == false){
                             res.send(action);
                         }else{
-                            res.redirect(action);
+                            /// already has recurring charge
+                            res.render('index', { title: 'Express' });
+                            //res.redirect(action);
                         }
                         ///otherwise redirecion to activation occurs
                     });
