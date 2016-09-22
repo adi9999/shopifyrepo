@@ -6,7 +6,7 @@ var dbCollectionShopDetail = require('../models/dbShopDetail.js');
 var dbShopRecurringChargeDetail = require('../models/dbRecurringChargeDetail.js');
 
 
-shopifyRouter.shop = "constellationck.myshopify.com";
+shopifyRouter.shop = "sofizarstore.myshopify.com";
 shopifyRouter.shopifyAppKey = "ff0c02ef99d9efe2f480e2e375a9b0c3";
 shopifyRouter.shopifySecretKey = "544c5073917ec58c840ab62f69e377fd";
 shopifyRouter.shopifyScope = "write_products,read_orders,write_orders,read_products";
